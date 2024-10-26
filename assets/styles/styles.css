@@ -1,0 +1,212 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "anton", sans-serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  display: grid;
+  grid-template-areas:
+    "nav"
+    "selector"
+    "main"
+    "footer";
+  grid-template-rows: 50px 50px 1fr 50px;
+  height: 100vh;
+}
+
+.nav {
+  grid-area: nav;
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffcc00;
+  text-align: center;
+  align-items: center;
+  padding: 10px;
+}
+
+.menu {
+  order: 1;
+}
+
+.Logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.Logo span {
+  margin-left: 8px;
+}
+
+.selector {
+  grid-area: selector;
+  background-color: #000000;
+  color: #ffff;
+  text-align: center;
+  padding: 10px;
+}
+
+.aside {
+  grid-area: aside;
+  display: none;
+}
+
+.main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffcc00;
+  padding: 10px;
+}
+
+.card {
+  width: 370px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  text-align: center;
+  margin-bottom: 100px;
+  margin-top: 100px;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+}
+
+.card-content {
+  padding: 15px;
+}
+
+.card h3 {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.card p {
+  font-size: 0.9em;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.card button {
+  padding: 10px 15px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.card button:hover {
+  background-color: #0056b3;
+}
+
+.desktop {
+  display: none;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.page-btn {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  background-color: #f4f4f4;
+  color: #333;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 0.9em;
+}
+
+.page-btn:hover {
+  background-color: #ddd;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: #000000;
+  color: #ffcc00;
+  text-align: center;
+  padding: 10px;
+}
+
+@media (min-width: 576px) {
+  body {
+    grid-template-areas:
+      "nav nav"
+      "aside selector"
+      "aside main"
+      "footer footer";
+    grid-template-rows: 100px 70px 1fr 40px;
+    grid-template-columns: 0.7fr 3fr;
+    background-color: #000000;
+  }
+
+  .Logo {
+    justify-content: left;
+    font-size: 30px;
+  }
+
+  .selector {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0px;
+    text-align: center;
+    border-radius: 5px;
+  }
+
+  .selector label {
+    background-color: #000000;
+    font-size: 1.6em;
+    margin-right: 10px;
+  }
+
+  #opciones {
+    width: 100%;
+    padding: 8px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+  .aside {
+    display: block;
+    grid-area: aside;
+    background-color: #000000;
+    color: #ffcc00;
+    padding: 10px;
+    padding: 10%;
+    font-size: 25px;
+  }
+
+  .menu {
+    display: none;
+  }
+  .phone {
+    display: none;
+  }
+  .desktop {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+  .footer {
+    background-color: #000000;
+    color: #ffcc00;
+  }
+}
